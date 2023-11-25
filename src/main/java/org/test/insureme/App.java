@@ -19,10 +19,10 @@ public class App
     public static void main( String[] args ) throws InterruptedException, IOException
     {
     	System.out.println("Script Started");
-    	System.setProperty("webdriver.chrome.driver","C:/Users/Nayan/Downloads/chromedriver-win64/chromedriver.exe");
-    	//WebDriverManager.chromedriver().setup();
+    	//System.setProperty("webdriver.chrome.driver","C:/Users/Nayan/Downloads/chromedriver-win64/chromedriver.exe");
+    	WebDriverManager.chromedriver().setup();
     	ChromeOptions chromeOptions = new ChromeOptions();
-    	//chromeOptions.addArguments("--headless");
+    	chromeOptions.addArguments("--headless");
     	
     	System.out.println("Driver opening up the url in browser");
     	WebDriver driver = new ChromeDriver(chromeOptions);
@@ -51,8 +51,8 @@ public class App
     	
     	File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
     	
-    	File destFile = new File("/Users/Nayan/Documents/test-reports.jpg");
-    	//File destFile = new File("/var/lib/jenkins/workspace/insure-me-test-scripts/test-reports.jpg");
+    	//File destFile = new File("/Users/Nayan/Documents/test-reports.jpg");
+    	File destFile = new File("/var/lib/jenkins/workspace/insure-me-test-scripts/test-reports.jpg");
     
     	FileUtils.copyFile(srcFile, destFile);
     	
