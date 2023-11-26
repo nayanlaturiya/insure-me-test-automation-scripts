@@ -26,7 +26,7 @@ public class App
     	
     	System.out.println("Driver opening up the url in browser");
     	WebDriver driver = new ChromeDriver(chromeOptions);
-    	driver.get("http://15.207.18.152:8081//contact.html");
+    	driver.get("http://localhost:8081//contact.html");
     	
     	driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
     	System.out.println("Enter details in the form");
@@ -51,8 +51,8 @@ public class App
     	
     	File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
     	
-    	//File destFile = new File("/Users/Nayan/Documents/test-reports.jpg");
-    	File destFile = new File("/var/lib/jenkins/workspace/insure-me-test-scripts/test-reports.jpg");
+    	File destFile = new File("/Users/Nayan/Documents/test-reports.jpg");
+    	//File destFile = new File("/var/lib/jenkins/workspace/insure-me-test-scripts/test-reports.jpg");
     
     	FileUtils.copyFile(srcFile, destFile);
     	
